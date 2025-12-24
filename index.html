@@ -166,6 +166,24 @@ footer {
         font-size: 16px;
     }
 }
+    /* CARD COM IMAGEM */
+.card-img {
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-img .card-content {
+    padding: 15px;
+}
+
 
 </style>
 </head>
@@ -216,7 +234,14 @@ footer {
     </a></p>
 
     <div class="cards">
-        <div class="card"><strong>Domingo – 9h</strong><br>EBD (Meet)</div>
+        <div class="card card-img">
+    <img src="ebd-online.jpg" alt="Escola Bíblica Dominical Online">
+    <div class="card-content">
+        <strong>Domingo – 9h</strong><br>
+        Escola Bíblica Dominical (Online – Google Meet)
+    </div>
+</div>
+
         <div class="card"><strong>Domingo – 9h15</strong><br>EBD Presencial – Timbaúva</div>
         <div class="card"><strong>Domingo – 19h</strong><br>Celebração</div>
         <div class="card"><strong>Segunda – 21h</strong><br>Sala de Crescimento</div>
@@ -262,4 +287,5 @@ footer {
 
 </body>
 </html>
+
 
