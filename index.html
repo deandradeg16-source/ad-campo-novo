@@ -56,28 +56,6 @@ nav {
     border-radius: 20px;
 }
 
-/* CAPA */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1529070538774-1843cb3265df');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: #fff;
-    padding: 90px 20px;
-}
-
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.6;
-}
 
 /* BOTÕES */
 .btn {
@@ -174,7 +152,7 @@ footer {
     .card-img img {
         height: 280px; /* imagem um pouco menor no celular */
     }
-}
+
 
 }
     /* CARD COM IMAGEM */
@@ -196,20 +174,111 @@ footer {
     border-radius: 6px;     /* deixa mais elegante */
 }
 
-
-
-
-
-
-
-
-
 .card-img .card-content {
     padding: 20px;
     text-align: center;
 }
+    /* =========================
+   HERO SLIDER (TOPO)
+========================= */
+.hero-slider {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+}
 
+/* Slides */
+.slides {
+    position: absolute;
+    inset: 0;
+}
 
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Escurecimento para leitura do texto */
+.hero-slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+}
+
+/* Conteúdo central (texto + botão) */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* Setas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background: rgba(0,0,0,0.45);
+    border: none;
+    color: #fff;
+    font-size: 34px;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.arrow:hover {
+    background: rgba(0,0,0,0.65);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 340px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .arrow {
+        font-size: 26px;
+        padding: 8px 12px;
+    }
+ }
 
 </style>
 </head>
@@ -230,15 +299,34 @@ footer {
 </nav>
 
 <!-- CAPA -->
-<div class="hero">
-    <h1>AD Campo Novo</h1>
-    <p>
-        Igreja Discipuladora | Campo Novo – RS<br>
-        “Ide, portanto, fazei discípulos de todas as nações.”<br>
-        <em>Mateus 28:19</em>
-    </p>
-    <a href="#programacao" class="btn">Ver Programação</a>
+<div class="hero-slider">
+
+    <div class="slides">
+        <div class="slide active" style="background-image: url('frenteigreja.jpg');"></div>
+        <div class="slide" style="background-image: url('reino.jpg');"></div>
+        <div class="slide" style="background-image: url('minlouvor.jpg');"></div>
+        <div class="slide" style="background-image: url('batismo1.jpg');"></div>
+        <div class="slide" style="background-image: url('fotografia2.jpg');"></div>
+        <div class="slide" style="background-image: url('prepra.jpg');"></div>
+    </div>
+
+    <!-- CONTEÚDO FIXO -->
+    <div class="hero-content">
+        <h1>AD Campo Novo</h1>
+        <p>
+            Igreja Discipuladora | Campo Novo – RS<br>
+            “Ide, portanto, fazei discípulos de todas as nações.”<br>
+            <em>Mateus 28:19</em>
+        </p>
+        <a href="#programacao" class="btn">Ver Programação</a>
+    </div>
+
+    <!-- SETAS -->
+    <button class="arrow prev">&#10094;</button>
+    <button class="arrow next">&#10095;</button>
+
 </div>
+
 
 <!-- QUEM SOMOS -->
 <section id="quem-somos">
@@ -324,9 +412,59 @@ footer {
 <footer>
     © 2025 – AD Campo Novo | Assembleia de Deus – Igreja Discipuladora
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slides = document.querySelectorAll(".slide");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
+
+    let currentSlide = 0;
+    let timer = null;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[index].classList.add("active");
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function startAutoSlide() {
+        timer = setInterval(nextSlide, 6000); // troca a cada 6s
+    }
+
+    function resetAutoSlide() {
+        clearInterval(timer);
+        startAutoSlide();
+    }
+
+    nextBtn.addEventListener("click", function () {
+        nextSlide();
+        resetAutoSlide();
+    });
+
+    prevBtn.addEventListener("click", function () {
+        prevSlide();
+        resetAutoSlide();
+    });
+
+    // Inicializa
+    showSlide(currentSlide);
+    startAutoSlide();
+});
+</script>
 
 </body>
 </html>
+
 
 
 
