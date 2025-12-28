@@ -1,98 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>AD Campo Novo – Igreja Discipuladora</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* =====================
+   BASE
+===================== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6f8;
+    color: #333;
+}
+
+a { text-decoration: none; }
+
+/* =====================
+   MENU
+===================== */
+nav {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-weight: bold;
+    color: #1f3c88;
+    font-size: 18px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #1f3c88;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin-left: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #1f3c88;
+}
+
+.nav-whatsapp {
+    background: #1f3c88;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+/* =====================
+   HERO SLIDER
+===================== */
+.hero-slider {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+}
+
+.slides, .slide {
+    position: absolute;
+    inset: 0;
+}
+
+.slide {
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active { opacity: 1; }
+
+.hero-slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+}
+
+.hero-content h1 { font-size: 42px; }
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #1f3c88;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+/* Setas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background: rgba(0,0,0,.45);
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    padding: 8px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* =====================
+   SEÇÕES
+===================== */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+h2 { color: #1f3c88; }
+
+/* =====================
+   CARDS
+===================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    text-align: center;
+}
+
+.card-img img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 6px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background: #1f3c88;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+
+    .menu-toggle { display: block; }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-links.active { display: flex; }
+
+    .nav-links a {
+        margin: 6px 0;
+    }
+
+    .hero-slider { height: 320px; }
+
+    .hero-content h1 { font-size: 28px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="nav-logo">AD Campo Novo</div>
+    <button class="menu-toggle">☰</button>
+    <div class="nav-links">
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#programacao">Programação</a>
+      <a href="#contato">Contato</a>
+      <a href="#" class="nav-whatsapp">WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-slider">
+  <div class="slides">
+    <div class="slide active" style="background-image:url('frenteigreja.jpg')"></div>
+    <div class="slide" style="background-image:url('reino.jpg')"></div>
+    <div class="slide" style="background-image:url('minlouvor.jpg')"></div>
+  </div>
+  <div class="hero-content">
+    <h1>AD Campo Novo</h1>
+    <p>Igreja Discipuladora | Campo Novo – RS</p>
+    <a href="#programacao" class="btn">Ver Programação</a>
+  </div>
+  <button class="arrow prev">&#10094;</button>
+  <button class="arrow next">&#10095;</button>
+</div>
+
+<section id="quem-somos">
+<h2>Quem Somos</h2>
+<p>Igreja comprometida com discipulado e a pregação do Evangelho.</p>
+</section>
+
 <section id="programacao">
 <h2>Programação da Igreja</h2>
 
-<h3>Campo Novo – Sede</h3>
-
 <div class="cards">
-
-<!-- EBD ONLINE -->
-<div class="card card-img">
-<img src="ebd-online.jpg" alt="Escola Bíblica Dominical Online">
-<div class="card-content">
-<strong>Domingo – 9h</strong><br>
-Escola Bíblica Dominical (Online – Google Meet)
+<div class="card card-img"><img src="ebd-online.jpg"><strong>Dom 9h</strong><br>EBD Online</div>
+<div class="card card-img"><img src="celebracao-domingo.jpg"><strong>Dom 19h</strong><br>Celebração</div>
+<div class="card card-img"><img src="sala-crescimento.jpg"><strong>Seg 21h</strong><br>Sala de Crescimento</div>
+<div class="card card-img"><img src="terP.jpg"><strong>Ter 19h30</strong><br>Terça Profética</div>
+<div class="card card-img"><img src="celebratarde.jpg"><strong>Qua 14h30</strong><br>Celebração da Tarde</div>
+<div class="card card-img"><img src="jejum.jpg"><strong>Sex 6h30</strong><br>Jejum e Oração</div>
 </div>
-</div>
-
-<!-- EBD PRESENCIAL -->
-<div class="card">
-<strong>Domingo – 9h15</strong><br>
-EBD Presencial – Timbaúva
-</div>
-
-<!-- CELEBRAÇÃO DOMINGO -->
-<div class="card card-img">
-<img src="celebracao-domingo.jpg" alt="Celebração de Domingo">
-<div class="card-content">
-<strong>Domingo – 19h</strong><br>
-Celebração
-</div>
-</div>
-
-<!-- SALA DE CRESCIMENTO -->
-<div class="card card-img">
-<img src="sala-crescimento.jpg" alt="Sala de Crescimento">
-<div class="card-content">
-<strong>Segunda – 21h</strong><br>
-Sala de Crescimento
-</div>
-</div>
-
-<!-- TERÇA PROFÉTICA -->
-<div class="card card-img">
-<img src="terP.jpg" alt="Terça Profética">
-<div class="card-content">
-<strong>Terça – 19h30</strong><br>
-Terça Profética
-</div>
-</div>
-
-<!-- CELEBRAÇÃO DA TARDE -->
-<div class="card card-img">
-<img src="celebratarde.jpg" alt="Celebração da Tarde">
-<div class="card-content">
-<strong>Quarta – 14h30</strong><br>
-Celebração da Tarde
-</div>
-</div>
-
-<!-- VILA TURVO -->
-<div class="card">
-<strong>Sexta – 13h30</strong><br>
-Celebração – Vila Turvo
-</div>
-
-<!-- JEJUM -->
-<div class="card card-img">
-<img src="jejum.jpg" alt="Jejum e Oração">
-<div class="card-content">
-<strong>Sexta – 6h30</strong><br>
-Jejum e Oração
-</div>
-</div>
-
-<!-- SALA DE ADORAÇÃO -->
-<div class="card">
-<strong>Sábado – 19h30</strong><br>
-Sala de Adoração
-</div>
-
-</div>
-
-<h3>Braga – RS</h3>
-
-<div class="cards">
-<div class="card"><strong>Domingo – 19h</strong><br>Celebração</div>
-<div class="card"><strong>Quarta – 19h30</strong><br>EBD Presencial</div>
-<div class="card"><strong>Sábado – 19h30</strong><br>Sala de Adoração</div>
-</div>
-
-<h3>São Martinho – RS</h3>
-
-<div class="cards">
-<div class="card"><strong>Domingo – 19h</strong><br>Celebração</div>
-<div class="card"><strong>Quinta – 19h30</strong><br>Celebração</div>
-<div class="card"><strong>Sábado – 19h30</strong><br>Sala de Adoração</div>
-</div>
-
 </section>
+
+<section id="contato">
+<h2>Contato</h2>
+<a class="btn">WhatsApp</a>
+</section>
+
+<footer>© 2025 – AD Campo Novo</footer>
+
+<script>
+const slides=document.querySelectorAll('.slide');
+let i=0;
+setInterval(()=>{
+slides[i].classList.remove('active');
+i=(i+1)%slides.length;
+slides[i].classList.add('active');
+},6000);
+
+document.querySelector('.menu-toggle')
+.onclick=()=>document.querySelector('.nav-links').classList.toggle('active');
+</script>
+
+</body>
+</html>
