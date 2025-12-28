@@ -280,6 +280,46 @@ footer {
     }
  }
 
+    /* BOTÃO MENU MOBILE */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #1f3c88;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    .nav-whatsapp {
+        margin-top: 10px;
+        align-self: flex-start;
+    }
+}
+
+
 </style>
 </head>
 
@@ -289,6 +329,9 @@ footer {
 <nav>
   <div class="nav-container">
     <div class="nav-logo">AD Campo Novo</div>
+
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
     <div class="nav-links">
       <a href="#quem-somos">Quem Somos</a>
       <a href="#programacao">Programação</a>
@@ -297,6 +340,7 @@ footer {
     </div>
   </div>
 </nav>
+
 
 <!-- CAPA -->
 <div class="hero-slider">
@@ -486,8 +530,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+    <script>
+document.querySelector(".menu-toggle").addEventListener("click", function () {
+    document.querySelector(".nav-links").classList.toggle("active");
+});
+</script>
+
 </body>
 </html>
+
 
 
 
