@@ -273,17 +273,64 @@ footer {
 <footer>© 2025 – AD Campo Novo</footer>
 
 <script>
-const slides=document.querySelectorAll('.slide');
-let i=0;
-setInterval(()=>{
-slides[i].classList.remove('active');
-i=(i+1)%slides.length;
-slides[i].classList.add('active');
-},6000);
+document.addEventListener("DOMContentLoaded", function () {
 
-document.querySelector('.menu-toggle')
-.onclick=()=>document.querySelector('.nav-links').classList.toggle('active');
+    const slides = document.querySelectorAll(".slide");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    let current = 0;
+    let timer;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[index].classList.add("active");
+    }
+
+    function nextSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }
+
+    function prevSlide() {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+    }
+
+    function startAuto() {
+        timer = setInterval(nextSlide, 6000);
+    }
+
+    function resetAuto() {
+        clearInterval(timer);
+        startAuto();
+    }
+
+    // Setas
+    nextBtn.addEventListener("click", () => {
+        nextSlide();
+        resetAuto();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        prevSlide();
+        resetAuto();
+    });
+
+    // Menu mobile
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+    // Inicialização
+    showSlide(current);
+    startAuto();
+});
 </script>
+
 
 </body>
 </html>
+
