@@ -1,335 +1,107 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<title>AD Campo Novo – Igreja Discipuladora</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-/* ===== BASE ===== */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f4f6f8;
-    color: #333;
-}
-
-/* ===== MENU ===== */
-nav {
-    position: sticky;
-    top: 0;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    z-index: 1000;
-}
-
-.nav-container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 12px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-logo {
-    font-weight: bold;
-    color: #1f3c88;
-    font-size: 18px;
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 26px;
-    cursor: pointer;
-    color: #1f3c88;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-}
-
-.nav-links a:hover {
-    color: #1f3c88;
-}
-
-.nav-whatsapp {
-    background: #1f3c88;
-    color: #fff !important;
-    padding: 8px 18px;
-    border-radius: 20px;
-}
-
-/* ===== HERO / SLIDER ===== */
-.hero-slider {
-    position: relative;
-    height: 420px;
-    overflow: hidden;
-}
-
-.slide {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-.hero-slider::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 20px;
-}
-
-.hero-content h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.hero-content p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 14px 32px;
-    background: #1f3c88;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-}
-
-/* Setas do slider */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
-    background: rgba(0,0,0,0.45);
-    border: none;
-    color: #fff;
-    font-size: 32px;
-    padding: 10px 16px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.prev { left: 20px; }
-.next { right: 20px; }
-
-/* ===== SEÇÕES ===== */
-section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 70px 20px;
-}
-
-h2 {
-    color: #1f3c88;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-/* ===== CARDS ===== */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-align: center;
-}
-
-.card-img img {
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-    background: #fff;
-    border-radius: 6px;
-}
-
-.card-content {
-    padding-top: 15px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    background: #1f3c88;
-    color: #fff;
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 6px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        margin: 6px 0;
-    }
-
-    .hero-slider {
-        height: 320px;
-    }
-
-    .hero-content h1 {
-        font-size: 30px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    .card-img img {
-        height: 240px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- MENU -->
-<nav>
-  <div class="nav-container">
-    <div class="nav-logo">AD Campo Novo</div>
-    <button class="menu-toggle">☰</button>
-    <div class="nav-links">
-      <a href="#quem-somos">Quem Somos</a>
-      <a href="#programacao">Programação</a>
-      <a href="#contato">Contato</a>
-      <a href="https://wa.me/55SEUNUMEROAQUI" class="nav-whatsapp">WhatsApp</a>
-    </div>
-  </div>
-</nav>
-
-<!-- SLIDER -->
-<div class="hero-slider">
-  <div class="slide active" style="background-image:url('frenteigreja.jpg')"></div>
-  <div class="slide" style="background-image:url('reino.jpg')"></div>
-  <div class="slide" style="background-image:url('minlouvor.jpg')"></div>
-
-  <div class="hero-content">
-    <h1>AD Campo Novo</h1>
-    <p>Igreja Discipuladora | Campo Novo – RS</p>
-    <a href="#programacao" class="btn">Ver Programação</a>
-  </div>
-
-  <button class="arrow prev">&#10094;</button>
-  <button class="arrow next">&#10095;</button>
-</div>
-
-<!-- QUEM SOMOS -->
-<section id="quem-somos">
-<h2>Quem Somos</h2>
-<p>
-A AD Campo Novo é uma igreja comprometida com o discipulado,
-a comunhão e a pregação fiel do Evangelho de Jesus Cristo.
-Nosso desejo é formar discípulos eficazes e empoderados pelo Espírito Santo.
-</p>
-</section>
-
-<!-- PROGRAMAÇÃO -->
 <section id="programacao">
-<h2>Programação</h2>
+<h2>Programação da Igreja</h2>
+
+<h3>Campo Novo – Sede</h3>
+<p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Av.+Bento+Gonçalves,+782+-+Campo+Novo+-+RS" target="_blank">
+Av. Bento Gonçalves, 782 – Centro
+</a></p>
 
 <div class="cards">
 
+<!-- EBD ONLINE -->
+<div class="card card-img">
+<img src="ebd-online.jpg" alt="Escola Bíblica Dominical Online">
+<div class="card-content">
+<strong>Domingo – 9h</strong><br>
+Escola Bíblica Dominical (Online)
+</div>
+</div>
+
+<!-- EBD PRESENCIAL -->
+<div class="card">
+<strong>Domingo – 9h15</strong><br>
+EBD Presencial – Timbaúva
+</div>
+
+<!-- CELEBRAÇÃO DOMINGO -->
+<div class="card card-img">
+<img src="celebracao-domingo.jpg" alt="Celebração de Domingo">
+<div class="card-content">
+<strong>Domingo – 19h</strong><br>
+Celebração
+</div>
+</div>
+
+<!-- SALA DE CRESCIMENTO -->
+<div class="card card-img">
+<img src="sala-crescimento.jpg" alt="Sala de Crescimento">
+<div class="card-content">
+<strong>Segunda – 21h</strong><br>
+Sala de Crescimento
+</div>
+</div>
+
+<!-- TERÇA PROFÉTICA -->
 <div class="card card-img">
 <img src="terP.jpg" alt="Terça Profética">
 <div class="card-content">
-<strong>Terça – 19h30</strong><br>Terça Profética
+<strong>Terça – 19h30</strong><br>
+Terça Profética
 </div>
 </div>
 
+<!-- CELEBRAÇÃO DA TARDE -->
 <div class="card card-img">
 <img src="celebratarde.jpg" alt="Celebração da Tarde">
 <div class="card-content">
-<strong>Quarta – 14h30</strong><br>Celebração da Tarde
+<strong>Quarta – 14h30</strong><br>
+Celebração da Tarde
 </div>
 </div>
 
+<!-- VILA TURVO -->
+<div class="card">
+<strong>Sexta – 13h30</strong><br>
+Celebração – Vila Turvo
 </div>
+
+<!-- JEJUM -->
+<div class="card card-img">
+<img src="jejum.jpg" alt="Jejum e Oração">
+<div class="card-content">
+<strong>Sexta – 6h30</strong><br>
+Jejum e Oração
+</div>
+</div>
+
+<!-- SALA DE ADORAÇÃO -->
+<div class="card">
+<strong>Sábado – 19h30</strong><br>
+Sala de Adoração
+</div>
+
+</div>
+
+<h3>Braga – RS</h3>
+<p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Av.+Campos+Sáles,+150+-+Braga+-+RS" target="_blank">
+Av. Campos Sáles, 150 – Bairro Evangélico
+</a></p>
+
+<div class="cards">
+<div class="card"><strong>Domingo – 19h</strong><br>Celebração</div>
+<div class="card"><strong>Quarta – 19h30</strong><br>EBD Presencial</div>
+<div class="card"><strong>Sábado – 19h30</strong><br>Sala de Adoração</div>
+</div>
+
+<h3>São Martinho – RS</h3>
+<p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Av.+Júlio+de+Castilhos,+975+-+São+Martinho+-+RS" target="_blank">
+Av. Júlio de Castilhos, 975
+</a></p>
+
+<div class="cards">
+<div class="card"><strong>Domingo – 19h</strong><br>Celebração</div>
+<div class="card"><strong>Quinta – 19h30</strong><br>Celebração</div>
+<div class="card"><strong>Sábado – 19h30</strong><br>Sala de Adoração</div>
+</div>
+
 </section>
-
-<!-- CONTATO -->
-<section id="contato">
-<h2>Contato</h2>
-<p>Clique abaixo para falar com a igreja pelo WhatsApp.</p>
-<a class="btn" href="https://wa.me/55SEUNUMEROAQUI">WhatsApp da Igreja</a>
-</section>
-
-<footer>
-© 2025 – AD Campo Novo | Assembleia de Deus – Igreja Discipuladora
-</footer>
-
-<script>
-/* MENU MOBILE */
-document.querySelector(".menu-toggle").onclick = function () {
-  document.querySelector(".nav-links").classList.toggle("active");
-};
-
-/* SLIDER */
-const slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 6000);
-</script>
-
-</body>
-</html>
