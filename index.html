@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* CONFIGURAÇÕES GERAIS */
+/* ===== BASE ===== */
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -14,11 +14,11 @@ body {
     color: #333;
 }
 
-/* MENU */
+/* ===== MENU ===== */
 nav {
     position: sticky;
     top: 0;
-    background: #ffffff;
+    background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     z-index: 1000;
 }
@@ -26,7 +26,7 @@ nav {
 .nav-container {
     max-width: 1000px;
     margin: auto;
-    padding: 15px 20px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,6 +36,20 @@ nav {
     font-weight: bold;
     color: #1f3c88;
     font-size: 18px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #1f3c88;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
@@ -56,141 +70,11 @@ nav {
     border-radius: 20px;
 }
 
-
-/* BOTÕES */
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 14px 32px;
-    background: #1f3c88;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-}
-
-/* SEÇÕES */
-section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 70px 20px;
-}
-
-h2 {
-    color: #1f3c88;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-/* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-align: center;
-}
-
-/* FOOTER */
-footer {
-    background: #1f3c88;
-    color: #fff;
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
-}
-    /* AJUSTES PARA CELULAR */
-@media (max-width: 768px) {
-
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-logo {
-        margin-bottom: 10px;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-links a {
-        margin: 8px 0;
-    }
-
-    .nav-whatsapp {
-        align-self: flex-start;
-        margin-top: 10px;
-    }
-
-    .hero {
-        padding: 110px 20px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-    
-    .card-img {
-        padding: 12px 14px 18px 14px;
-        /* topo | direita | baixo | esquerda */
-    }
-
-    .card-img img {
-        height: 280px; /* imagem um pouco menor no celular */
-    }
-
-
-}
-    /* CARD COM IMAGEM */
-.card-img {
-    padding: 12px 20px 20px 20px;
-    /* topo | direita | baixo | esquerda */
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-
-
-.card-img img {
-    display: block;
-    width: 100%;
-    height: 340px;
-    object-fit: contain;
-    background: #ffffff;
-    border-radius: 6px;     /* deixa mais elegante */
-}
-
-.card-img .card-content {
-    padding: 20px;
-    text-align: center;
-}
-    /* =========================
-   HERO SLIDER (TOPO)
-========================= */
+/* ===== HERO / SLIDER ===== */
 .hero-slider {
     position: relative;
     height: 420px;
     overflow: hidden;
-}
-
-/* Slides */
-.slides {
-    position: absolute;
-    inset: 0;
 }
 
 .slide {
@@ -206,7 +90,6 @@ footer {
     opacity: 1;
 }
 
-/* Escurecimento para leitura do texto */
 .hero-slider::after {
     content: "";
     position: absolute;
@@ -215,7 +98,6 @@ footer {
     z-index: 1;
 }
 
-/* Conteúdo central (texto + botão) */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -235,10 +117,20 @@ footer {
     font-size: 18px;
     max-width: 800px;
     margin: auto;
-    line-height: 1.6;
 }
 
-/* Setas */
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 32px;
+    background: #1f3c88;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+/* Setas do slider */
 .arrow {
     position: absolute;
     top: 50%;
@@ -247,23 +139,88 @@ footer {
     background: rgba(0,0,0,0.45);
     border: none;
     color: #fff;
-    font-size: 34px;
+    font-size: 32px;
     padding: 10px 16px;
     cursor: pointer;
     border-radius: 50%;
 }
 
-.arrow:hover {
-    background: rgba(0,0,0,0.65);
-}
-
 .prev { left: 20px; }
 .next { right: 20px; }
 
-/* Mobile */
+/* ===== SEÇÕES ===== */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 70px 20px;
+}
+
+h2 {
+    color: #1f3c88;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* ===== CARDS ===== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.card-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 6px;
+}
+
+.card-content {
+    padding-top: 15px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #1f3c88;
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 6px 0;
+    }
+
     .hero-slider {
-        height: 340px;
+        height: 320px;
     }
 
     .hero-content h1 {
@@ -274,105 +231,10 @@ footer {
         font-size: 16px;
     }
 
-    .arrow {
-        font-size: 26px;
-        padding: 8px 12px;
-    }
- }
-
-    /* BOTÃO MENU MOBILE */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 26px;
-    cursor: pointer;
-    color: #1f3c88;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-    .nav-container {
-        padding: 8px 15px; /* ↓ diminui a faixa branca */
-    }
-
-    .menu-toggle {
-        font-size: 24px;
-    }
-
-    .nav-links {
-        margin-top: 5px; /* ↓ menos espaço ao abrir */
-    }
-
-    .nav-links a {
-        padding: 8px 0; /* ↓ links mais compactos */
+    .card-img img {
+        height: 240px;
     }
 }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        padding: 10px 0;
-        margin: 0;
-    }
-
-    .nav-whatsapp {
-        margin-top: 10px;
-        align-self: flex-start;
-    }
-}
-
-/* MENU ULTRA COMPACTO NO CELULAR */
-@media (max-width: 768px) {
-
-    nav {
-        padding: 0;
-    }
-
-    .nav-container {
-        padding: 4px 12px; /* MUITO menor */
-        align-items: center;
-    }
-
-    .nav-logo {
-        font-size: 16px;
-        line-height: 1;
-    }
-
-    .menu-toggle {
-        font-size: 22px;
-        padding: 2px 6px;
-    }
-
-    .nav-links {
-        margin-top: 6px;
-    }
-
-    .nav-links a {
-        padding: 6px 0;
-        font-size: 15px;
-    }
-
-    .nav-whatsapp {
-        padding: 6px 14px;
-        font-size: 14px;
-    }
-}
-
 </style>
 </head>
 
@@ -382,9 +244,7 @@ footer {
 <nav>
   <div class="nav-container">
     <div class="nav-logo">AD Campo Novo</div>
-
-    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-
+    <button class="menu-toggle">☰</button>
     <div class="nav-links">
       <a href="#quem-somos">Quem Somos</a>
       <a href="#programacao">Programação</a>
@@ -394,224 +254,82 @@ footer {
   </div>
 </nav>
 
-
-<!-- CAPA -->
+<!-- SLIDER -->
 <div class="hero-slider">
+  <div class="slide active" style="background-image:url('frenteigreja.jpg')"></div>
+  <div class="slide" style="background-image:url('reino.jpg')"></div>
+  <div class="slide" style="background-image:url('minlouvor.jpg')"></div>
 
-    <div class="slides">
-        <div class="slide active" style="background-image: url('frenteigreja.jpg');"></div>
-        <div class="slide" style="background-image: url('reino.jpg');"></div>
-        <div class="slide" style="background-image: url('minlouvor.jpg');"></div>
-        <div class="slide" style="background-image: url('batismo1.jpg');"></div>
-        <div class="slide" style="background-image: url('batismo2.jpg');"></div>
-        <div class="slide" style="background-image: url('prepra.jpg');"></div>
-    </div>
+  <div class="hero-content">
+    <h1>AD Campo Novo</h1>
+    <p>Igreja Discipuladora | Campo Novo – RS</p>
+    <a href="#programacao" class="btn">Ver Programação</a>
+  </div>
 
-    <!-- CONTEÚDO FIXO -->
-    <div class="hero-content">
-        <h1>AD Campo Novo</h1>
-        <p>
-            Igreja Discipuladora | Campo Novo – RS<br>
-            “Ide, portanto, fazei discípulos de todas as nações.”<br>
-            <em>Mateus 28:19</em>
-        </p>
-        <a href="#programacao" class="btn">Ver Programação</a>
-    </div>
-
-    <!-- SETAS -->
-    <button class="arrow prev">&#10094;</button>
-    <button class="arrow next">&#10095;</button>
-
+  <button class="arrow prev">&#10094;</button>
+  <button class="arrow next">&#10095;</button>
 </div>
-
 
 <!-- QUEM SOMOS -->
 <section id="quem-somos">
-    <h2>Quem Somos</h2>
-    <p>
-        A AD Campo Novo é uma igreja comprometida com o discipulado,
-        a comunhão e a pregação fiel do Evangelho de Jesus Cristo.
-        Nosso desejo é formar discípulos eficazes e empoderados pelo Espírito Santo.
-    </p>
+<h2>Quem Somos</h2>
+<p>
+A AD Campo Novo é uma igreja comprometida com o discipulado,
+a comunhão e a pregação fiel do Evangelho de Jesus Cristo.
+Nosso desejo é formar discípulos eficazes e empoderados pelo Espírito Santo.
+</p>
 </section>
 
 <!-- PROGRAMAÇÃO -->
 <section id="programacao">
-    <h2>Programação da Igreja</h2>
+<h2>Programação</h2>
 
-    <h3>Campo Novo – Sede</h3>
-    <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Av.+Bento+Gonçalves,+782+-+Campo+Novo+-+RS" target="_blank">
-        Av. Bento Gonçalves, 782 – Centro
-    </a></p>
+<div class="cards">
 
-    <div class="cards">
-        <div class="card card-img">
-    <img src="ebd-online.jpg" alt="Escola Bíblica Dominical Online">
-    <div class="card-content">
-        <strong>Domingo – 9h</strong><br>
-        Escola Bíblica Dominical (Online – Google Meet)
-    </div>
+<div class="card card-img">
+<img src="terP.jpg" alt="Terça Profética">
+<div class="card-content">
+<strong>Terça – 19h30</strong><br>Terça Profética
+</div>
 </div>
 
-        <div class="card"><strong>Domingo – 9h15</strong><br>EBD Presencial – Timbaúva</div>
-        <div class="card card-img">
-    <img src="celebracao-domingo.jpg" alt="Celebração de Domingo">
-    <div class="card-content">
-        <strong>Domingo – 19h</strong><br>
-        Celebração
-    </div>
+<div class="card card-img">
+<img src="celebratarde.jpg" alt="Celebração da Tarde">
+<div class="card-content">
+<strong>Quarta – 14h30</strong><br>Celebração da Tarde
+</div>
 </div>
 
-        <div class="card card-img">
-    <img src="sala-crescimento.jpg" alt="Sala de Crescimento">
-    <div class="card-content">
-        <strong>Segunda – 21h</strong><br>
-        Sala de Crescimento
-    </div>
 </div>
-
-        <div class="card card-img">
-    <img src="terP.jpg" alt="Terça Profética">
-    <div class="card-content">
-        <strong>Terça – 19h30</strong><br>
-        Terça Profética
-    </div>
-</div>
-
-        <div class="card card-img">
-    <img src="celebratarde.jpg" alt="Celebração da Tarde">
-    <div class="card-content">
-        <strong>Quarta – 14h30</strong><br>
-        Celebração da Tarde
-    </div>
-</div>
-
-       <div class="card"><strong>Sexta – 13h30</strong><br>Vila Turvo</div>
-
-        
-        <div class="card card-img">
-    <img src="jejum.jpg" alt="Jejum e Oração">
-    <div class="card-content">
-        <strong>Sexta – 06h30</strong><br>
-        Jejum e Oração
-    </div>
-</div>        
-       
-        <div class="card"><strong>Sábado – 19h30</strong><br>Sala de Adoração</div>
-    </div>
-
-    <h3>Braga – RS</h3>
-    <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Av.+Campos+Sáles,+150+-+Braga+-+RS" target="_blank">
-        Av. Campos Sáles, 150 – Bairro Evangélico
-    </a></p>
-
-    <div class="cards">
-        <div class="card"><strong>Domingo – 19h</strong><br>Celebração</div>
-        <div class="card"><strong>Quarta – 19h30</strong><br>EBD Presencial</div>
-        <div class="card"><strong>Sábado – 19h30</strong><br>Sala de Adoração</div>
-    </div>
-
-    <h3>São Martinho – RS</h3>
-    <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Av.+Júlio+de+Castilhos,+975+-+São+Martinho+-+RS" target="_blank">
-        Av. Júlio de Castilhos, 975
-    </a></p>
-
-    <div class="cards">
-        <div class="card"><strong>Domingo – 19h</strong><br>Celebração</div>
-        <div class="card"><strong>Quinta – 19h30</strong><br>Celebração</div>
-        <div class="card"><strong>Sábado – 19h30</strong><br>Sala de Adoração</div>
-    </div>
 </section>
 
 <!-- CONTATO -->
 <section id="contato">
-    <h2>Fale Conosco</h2>
-    <p>Clique abaixo para falar com a igreja pelo WhatsApp.</p>
-    <a href="https://wa.me/55SEUNUMEROAQUI" class="btn">WhatsApp da Igreja</a>
+<h2>Contato</h2>
+<p>Clique abaixo para falar com a igreja pelo WhatsApp.</p>
+<a class="btn" href="https://wa.me/55SEUNUMEROAQUI">WhatsApp da Igreja</a>
 </section>
 
 <footer>
-    © 2025 – AD Campo Novo | Assembleia de Deus – Igreja Discipuladora
+© 2025 – AD Campo Novo | Assembleia de Deus – Igreja Discipuladora
 </footer>
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+/* MENU MOBILE */
+document.querySelector(".menu-toggle").onclick = function () {
+  document.querySelector(".nav-links").classList.toggle("active");
+};
 
-    const slides = document.querySelectorAll(".slide");
-    const nextBtn = document.querySelector(".next");
-    const prevBtn = document.querySelector(".prev");
+/* SLIDER */
+const slides = document.querySelectorAll(".slide");
+let index = 0;
 
-    let currentSlide = 0;
-    let timer = null;
-
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove("active"));
-        slides[index].classList.add("active");
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    function startAutoSlide() {
-        timer = setInterval(nextSlide, 6000); // troca a cada 6s
-    }
-
-    function resetAutoSlide() {
-        clearInterval(timer);
-        startAutoSlide();
-    }
-
-    nextBtn.addEventListener("click", function () {
-        nextSlide();
-        resetAutoSlide();
-    });
-
-    prevBtn.addEventListener("click", function () {
-        prevSlide();
-        resetAutoSlide();
-    });
-
-    // Inicializa
-    showSlide(currentSlide);
-    startAutoSlide();
-});
-</script>
-
-    <script>
-document.querySelector(".menu-toggle").addEventListener("click", function () {
-    document.querySelector(".nav-links").classList.toggle("active");
-});
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 6000);
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
