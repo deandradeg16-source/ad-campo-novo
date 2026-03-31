@@ -236,6 +236,57 @@ footer {
     background: #27ae60; /* verde */
 }
 
+   .agenda-container {
+    display: flex;
+    gap: 40px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+/* Cada lado ocupa metade */
+.agenda-left,
+.agenda-right {
+    width: 50%;
+}
+
+/* Linha no meio (igual revista) */
+.agenda-left {
+    border-right: 2px solid #eee;
+    padding-right: 20px;
+}
+
+.agenda-right {
+    padding-left: 20px;
+}
+
+.agenda-container h2 {
+    color: #ff8c00;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+    .agenda-container {
+        flex-direction: column;
+    }
+
+    .agenda-left,
+    .agenda-right {
+        width: 100%;
+    }
+
+    .agenda-left {
+        border-right: none;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 20px;
+    }
+
+    .agenda-right {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+}
+
 
 </style>
 </head>
