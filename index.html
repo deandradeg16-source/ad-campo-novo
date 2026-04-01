@@ -285,6 +285,40 @@ footer {
         margin-top: 20px;
     }
 }
+   .agenda-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mes-btn {
+    width: 100%;
+    text-align: left;
+    padding: 14px;
+    background: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.mes-btn:hover {
+    background: #e67e00;
+}
+
+.mes-content {
+    display: none;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.mes.active .mes-content {
+    display: block;
+}
 
 
 </style>
@@ -394,73 +428,81 @@ Pr. Amós Anger e Keila Anger
 </div>
 
 <!-- LADO DIREITO -->
-<div class="agenda-right">
-<h2>Agenda Oficial</h2>
-<p><strong>Janeiro a Maio 2026</strong></p>
+<div class="agenda-accordion">
 
-<p><strong>Março:</strong><br>
-08/03 – Dia da Mulher<br>
-14/03 – Campanha Bairro Operário</p>
+  <div class="mes">
+    <button class="mes-btn">Junho</button>
+    <div class="mes-content">
+      09/06 – AGO<br>
+      13/06 – Culto Geral Jovens<br>
+      19 e 20/06 – Seminário UDF<br>
+      25/06 – CIEPADERGS<br>
+      27/06 – Vigília da Integração<br>
+      28/06 – Dia da Comunhão
+    </div>
+  </div>
 
-<p><strong>Abril:</strong><br>
-04 e 05/04 – Campanha Evangelística - Braga<br>
-11/04 – Culto Jovens<br>
-12/04 – Reinauguração Vila Turvo<br>
-14/04 – AGO<br>
-18/04 – Vígilia da Integração<br>
-25 e 26/04 – Imersão<br>
+  <div class="mes">
+    <button class="mes-btn">Julho</button>
+    <div class="mes-content">
+      18/07 – Culto Geral de Jovens
+    </div>
+  </div>
 
-<p><strong>Maio:</strong><br>
-16 e 17/05 – Encontro Joven Unit<br>
-23 e 24/05 – Festa Congregação Braga <br>
-30/05 – Fórum<br>
-          
-<p><strong>Junho:</strong><br>
-09/06 – AGO<br>
-13/06 – Culto Geral Jovens<br>
-19 e 20/06 – Seminário UDF<br>
-25/06 – CIEPADERGS – Reunião Presidentes<br>
-27/06 – Vigília da Integração<br>
-28/06 – Dia da Comunhão</p>
+  <div class="mes">
+    <button class="mes-btn">Agosto</button>
+    <div class="mes-content">
+      01 e 02/08 – Encontro Círculo de Oração<br>
+      11/08 – AGO<br>
+      15/08 – Culto Geral de Jovens<br>
+      21 e 22/08 – Seminário UDF<br>
+      29/08 – Vigília da Integração
+    </div>
+  </div>
 
-<p><strong>Julho:</strong><br>
-18/07 – Culto Geral de Jovens</p>
+  <div class="mes">
+    <button class="mes-btn">Setembro</button>
+    <div class="mes-content">
+      10 e 11/09 – AGO<br>
+      12/09 – Fórum Teológico<br>
+      19/09 – Culto Geral de Jovens
+    </div>
+  </div>
 
-<p><strong>Agosto:</strong><br>
-01 e 02/08 – Encontro Círculo de Oração Pedro Garcia<br>
-11/08 – AGO<br>
-15/08 – Culto Geral de Jovens<br>
-21 e 22/08 – Seminário UDF<br>
-29/08 – Vigília da Integração</p>
+  <div class="mes">
+    <button class="mes-btn">Outubro</button>
+    <div class="mes-content">
+      03/10 – Campanha Evangelística<br>
+      10 e 11/10 – Encontro UFADECAN<br>
+      12/10 – Festa Infantil<br>
+      13/10 – AGO<br>
+      17/10 – Culto Jovens<br>
+      23 e 24/10 – Seminário UDF<br>
+      31/10 – Vigília
+    </div>
+  </div>
 
-<p><strong>Setembro:</strong><br>
-10 e 11/09 – AGO – CIEPADERGS<br>
-12/09 – Essência Fórum Teológico<br>
-19/09 – Culto Geral de Jovens</p>
+  <div class="mes">
+    <button class="mes-btn">Novembro</button>
+    <div class="mes-content">
+      08/11 – Encontro Círculo de Oração<br>
+      14 e 15/11 – Encontro Braga<br>
+      28/11 – Culto Jovens
+    </div>
+  </div>
 
-<p><strong>Outubro:</strong><br>
-03/10 – Campanha Evangelística<br>
-10 e 11/10 – Encontro da UFADECAN<br>
-12/10 – Festa Ministério Infantil<br>
-13/10 – AGO<br>
-17/10 – Culto Geral de Jovens<br>
-23 e 24/10 – Seminário UDF<br>
-31/10 – Vigília da Integração</p>
-
-<p><strong>Novembro:</strong><br>
-08/11 – Encontro Círculo de Oração – Vale dos Neves (manhã e tarde)<br>
-14 e 15/11 – Encontro Círculo de Oração Braga<br>
-28/11 – Culto Geral de Jovens</p>
-
-<p><strong>Dezembro:</strong><br>
-08/12 – AGE<br>
-09/12 – Encerramento do Ano Círculo de Oração (Sede)<br>
-12/12 – Confraternização São Martinho<br>
-13/12 – Dia da Bíblia<br>
-19/12 – Mini Fórum Jovens<br>
-23/12 – Cantata de Natal<br>
-31/12 – Culto da Virada</p>
-        </div>
+  <div class="mes">
+    <button class="mes-btn">Dezembro</button>
+    <div class="mes-content">
+      08/12 – AGE<br>
+      09/12 – Encerramento Círculo de Oração<br>
+      12/12 – Confraternização<br>
+      13/12 – Dia da Bíblia<br>
+      19/12 – Mini Fórum Jovens<br>
+      23/12 – Cantata de Natal<br>
+      31/12 – Culto da Virada
+    
+</div>
 
 </section>
 
@@ -705,6 +747,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Inicialização
     showSlide(current);
     startAuto();
+});
+   // AGENDA ACCORDION
+const meses = document.querySelectorAll(".mes-btn");
+
+meses.forEach(botao => {
+    botao.addEventListener("click", () => {
+        const mesAtual = botao.parentElement;
+
+        // fecha os outros
+        document.querySelectorAll(".mes").forEach(m => {
+            if (m !== mesAtual) {
+                m.classList.remove("active");
+            }
+        });
+
+        // abre o clicado
+        mesAtual.classList.toggle("active");
+    });
 });
 </script>
 
