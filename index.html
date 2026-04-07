@@ -336,16 +336,26 @@ footer {
     margin: 0 auto 20px;
     border-radius: 10px;
 }
-
-   .texto-pastor {
+.texto-pastor {
     max-height: 180px;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s ease;
 }
 
 .texto-pastor.expandido {
-    max-height: 1000px;
+    max-height: 3000px;
 }
+
+/* CELULAR */
+@media (max-width: 768px) {
+    .texto-pastor {
+        max-height: 250px;
+    }
+
+    .texto-pastor.expandido {
+        max-height: 4000px;
+    }
+
 
 .btn-toggle {
     margin-top: 10px;
