@@ -337,6 +337,26 @@ footer {
     border-radius: 10px;
 }
 
+   .texto-pastor {
+    max-height: 180px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.texto-pastor.expandido {
+    max-height: 1000px;
+}
+
+.btn-toggle {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #ff8c00;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+}
+
 
 </style>
 </head>
@@ -418,16 +438,15 @@ footer {
         Garantir minha vaga
     </a>
 </section>
+<section id="agenda">
+  <div class="agenda-container">
 
-   <section id="agenda">
-    <div class="agenda-container">
+    <!-- LADO ESQUERDO -->
+    <div class="agenda-left">
+      <h2>Palavra do Pastor</h2>
+      <p><strong>Pr. Amós Anger</strong></p>
 
-        <!-- LADO ESQUERDO -->
-        <div class="agenda-left">
-            <h2>Palavra do Pastor</h2>
-            <p><strong>Pr. Amós Anger</strong></p>
-
-            <p>
+      <p class="texto-pastor">
 Recebemos mais um ano como oportunidade de servir a Deus com dedicação e compromisso. Reconhecemos que a vida é um dom e valorizamos o privilégio de poder contribuir para o desenvolvimento da comunidade. Para 2026, almejamos êxito em nossos projetos, cientes de que, ao alinhar nossos objetivos aos princípios bíblicos, teremos grandes possibilidades de alcançar resultados significativos.
 
 Entendemos que servir é uma das formas mais autênticas de expressar gratidão pelo perdão de nossos pecados, e incentivamos todos a perseverarem na prática do bem, mesmo diante de adversidades e injustiças. Que nossas ações, orientadas por valores cristãos e proteção constante do nosso amado Pai, inspirem outras pessoas a viverem cheias do Espírito Santo.
@@ -439,8 +458,10 @@ Acreditamos no potencial desta igreja para realizar importantes conquistas e exp
 Em nome do compromisso assumido, reafirmamos a CONSOLIDAÇÃO de nossa visão, e esperamos que os resultados reflitam no fortalecimento, na multiplicação e na saúde espiritual de nossos oikos.
 
 Pr. Amós Anger e Keila Anger
-</p>
-</div>
+      </p>
+
+      <button class="btn-toggle">Ler mais</button>
+    </div>
 
 <!-- LADO DIREITO -->
 <div class="agenda-accordion">
@@ -759,27 +780,42 @@ document.addEventListener("DOMContentLoaded", function () {
         navLinks.classList.toggle("active");
     });
 
+    // AGENDA ACCORDION
+    const meses = document.querySelectorAll(".mes-btn");
+
+    meses.forEach(botao => {
+        botao.addEventListener("click", () => {
+            const mesAtual = botao.parentElement;
+
+            document.querySelectorAll(".mes").forEach(m => {
+                if (m !== mesAtual) {
+                    m.classList.remove("active");
+                }
+            });
+
+            mesAtual.classList.toggle("active");
+        });
+    });
+
+    // TEXTO DO PASTOR
+    const btnToggle = document.querySelector(".btn-toggle");
+    const textoPastor = document.querySelector(".texto-pastor");
+
+    if (btnToggle && textoPastor) {
+        btnToggle.addEventListener("click", () => {
+            textoPastor.classList.toggle("expandido");
+
+            if (textoPastor.classList.contains("expandido")) {
+                btnToggle.textContent = "Ler menos";
+            } else {
+                btnToggle.textContent = "Ler mais";
+            }
+        });
+    }
+
     // Inicialização
     showSlide(current);
     startAuto();
-});
-   // AGENDA ACCORDION
-const meses = document.querySelectorAll(".mes-btn");
-
-meses.forEach(botao => {
-    botao.addEventListener("click", () => {
-        const mesAtual = botao.parentElement;
-
-        // fecha os outros
-        document.querySelectorAll(".mes").forEach(m => {
-            if (m !== mesAtual) {
-                m.classList.remove("active");
-            }
-        });
-
-        // abre o clicado
-        mesAtual.classList.toggle("active");
-    });
 });
 </script>
 
