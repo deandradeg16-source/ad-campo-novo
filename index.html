@@ -16,7 +16,9 @@ body {
     color: #333;
 }
 
-a { text-decoration: none; }
+a {
+    text-decoration: none;
+}
 
 /* =====================
    MENU
@@ -39,8 +41,9 @@ nav {
 }
 
 .nav-logo {
-font-weight: bold; 
-   color: #ff8c00; font-size: 18px; 
+    font-weight: bold;
+    color: #ff8c00;
+    font-size: 18px;
 }
 
 .menu-toggle {
@@ -83,7 +86,8 @@ font-weight: bold;
     overflow: hidden;
 }
 
-.slides, .slide {
+.slides,
+.slide {
     position: absolute;
     inset: 0;
 }
@@ -95,7 +99,9 @@ font-weight: bold;
     transition: opacity 1s ease;
 }
 
-.slide.active { opacity: 1; }
+.slide.active {
+    opacity: 1;
+}
 
 .hero-slider::after {
     content: "";
@@ -114,7 +120,9 @@ font-weight: bold;
     padding: 0 20px;
 }
 
-.hero-content h1 { font-size: 42px; }
+.hero-content h1 {
+    font-size: 42px;
+}
 
 .btn {
     display: inline-block;
@@ -140,8 +148,14 @@ font-weight: bold;
     border-radius: 50%;
     cursor: pointer;
 }
-.prev { left: 20px; }
-.next { right: 20px; }
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
 
 /* =====================
    SEÇÕES
@@ -152,14 +166,16 @@ section {
     padding: 60px 20px;
 }
 
-h2 { color: #ff8c00; }
+h2 {
+    color: #ff8c00;
+}
 
 /* =====================
    CARDS
 ===================== */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
@@ -180,44 +196,14 @@ h2 { color: #ff8c00; }
 }
 
 /* =====================
-   FOOTER
+   ELEMENTOS EXTRAS
 ===================== */
-footer {
-    background: #ff8c00;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-/* =====================
-   MOBILE
-===================== */
-@media (max-width: 768px) {
-
-    .menu-toggle { display: block; }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .nav-links.active { display: flex; }
-
-    .nav-links a {
-        margin: 6px 0;
-    }
-
-    .hero-slider { height: 320px; }
-
-    .hero-content h1 { font-size: 28px; }
-}
-   .cidade {
+.cidade {
     width: 100%;
     margin-top: 40px;
 }
-   .news-tag {
+
+.news-tag {
     display: inline-block;
     padding: 4px 10px;
     border-radius: 12px;
@@ -228,140 +214,16 @@ footer {
 }
 
 .tag-aviso {
-    background: #f39c12; /* laranja */
+    background: #f39c12;
 }
 
 .tag-pos {
-    background: #27ae60; /* verde */
+    background: #27ae60;
 }
 
-   .agenda-container {
-    display: flex;
-    gap: 40px;
-    background: #fff;
-    padding: 40px;
-    border-radius: 10px;
-}
-
-/* Cada lado ocupa metade */
-.agenda-left,
-.agenda-right {
-    width: 50%;
-}
-
-/* Linha no meio (igual revista) */
-.agenda-left {
-    border-right: 2px solid #eee;
-    padding-right: 20px;
-}
-
-.agenda-right {
-    padding-left: 20px;
-}
-
-.agenda-container h2 {
-    color: #ff8c00;
-}
-   .agenda-left p {
-    text-align: justify;
-    line-height: 1.7;
-}
-
-/* CELULAR */
-@media (max-width: 768px) {
-    .agenda-container {
-        flex-direction: column;
-    }
-
-    .agenda-left,
-    .agenda-right {
-        width: 100%;
-    }
-
-    .agenda-left {
-        border-right: none;
-        border-bottom: 2px solid #eee;
-        padding-bottom: 20px;
-    }
-   
-.titulo-agenda {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.agenda-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px 18px;
-    align-items: start;
-}
-
-.mes {
-    position: relative;
-}
-
-.mes-btn {
-    width: 100%;
-    text-align: left;
-    padding: 14px 16px;
-    background: #ff8c00;
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
-}
-
-.mes-btn:hover {
-    background: #e67e00;
-}
-
-.mes-content {
-    display: none;
-    background: #f9f9f9;
-    padding: 14px;
-    border-radius: 10px;
-    line-height: 1.6;
-    margin-top: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.06);
-}
-
-.mes.active .mes-content {
-    display: block;
-}
-    
-  
-.mes-btn {
-    width: 100%;
-    text-align: left;
-    padding: 14px;
-    background: #ff8c00;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.mes-btn:hover {
-    background: #e67e00;
-}
-
-.mes-content {
-    display: none;
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    line-height: 1.6;
-}
-
-.mes.active .mes-content {
-    display: block;
-}
-
+/* =====================
+   FÓRUM
+===================== */
 #forum .btn {
     display: block;
     width: fit-content;
@@ -374,16 +236,84 @@ footer {
     margin: 0 auto 20px;
     border-radius: 10px;
 }
-.texto-pastor {
-    max-height: 180px;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
+
+/* =====================
+   AGENDA
+===================== */
+.agenda-container {
+    display: flex;
+    gap: 40px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
 }
 
-.texto-pastor.expandido {
-    max-height: 3000px;
+.agenda-left,
+.agenda-right {
+    width: 50%;
 }
 
+.agenda-left {
+    border-right: 2px solid #eee;
+    padding-right: 20px;
+}
+
+.agenda-right {
+    padding-left: 20px;
+}
+
+.agenda-container h2 {
+    color: #ff8c00;
+}
+
+.agenda-left p {
+    text-align: justify;
+    line-height: 1.7;
+}
+
+.titulo-agenda {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.agenda-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 18px;
+    margin-bottom: 20px;
+}
+
+.agenda-display {
+    background: #f9f9f9;
+    padding: 18px;
+    border-radius: 10px;
+    line-height: 1.7;
+    min-height: 120px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.06);
+}
+
+.mes-btn {
+    width: 100%;
+    text-align: left;
+    padding: 14px 16px;
+    background: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.mes-btn:hover,
+.mes-btn.ativo {
+    background: #e67e00;
+}
+
+/* =====================
+   TEXTO DO PASTOR
+===================== */
 .texto-pastor {
     max-height: 180px;
     overflow: hidden;
@@ -399,34 +329,80 @@ footer {
     width: fit-content;
     margin: 14px auto 0;
     background: transparent;
-    border: none; /* remove a linha */
+    border: none;
     color: #ff8c00;
     font-weight: bold;
     cursor: pointer;
     padding: 6px 10px;
     font-size: 14px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .btn-toggle:hover {
     color: #e67e00;
 }
 
-.btn-toggle:hover {
+/* =====================
+   FOOTER
+===================== */
+footer {
     background: #ff8c00;
     color: #fff;
+    text-align: center;
+    padding: 20px;
 }
 
-/* CELULAR */
+/* =====================
+   MOBILE
+===================== */
 @media (max-width: 768px) {
-    .texto-pastor {
-        max-height: 250px;
+    .menu-toggle {
+        display: block;
     }
 
-    .texto-pastor.expandido {
-        max-height: 4000px;
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
     }
-   @media (max-width: 768px) {
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 6px 0;
+    }
+
+    .hero-slider {
+        height: 320px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .agenda-container {
+        flex-direction: column;
+    }
+
+    .agenda-left,
+    .agenda-right {
+        width: 100%;
+    }
+
+    .agenda-left {
+        border-right: none;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 20px;
+    }
+
+    .agenda-right {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
     .agenda-grid {
         grid-template-columns: 1fr;
     }
@@ -435,7 +411,23 @@ footer {
         text-align: left;
     }
 
+    .texto-pastor {
+        max-height: 250px;
+    }
 
+    .texto-pastor.expandido {
+        max-height: 4000px;
+    }
+
+    #forum img {
+        width: 100%;
+    }
+
+    .btn-toggle {
+        margin: 16px auto 0;
+        text-align: center;
+    }
+}
 </style>
 </head>
 
