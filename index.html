@@ -283,18 +283,56 @@ footer {
         border-bottom: 2px solid #eee;
         padding-bottom: 20px;
     }
-
-    .agenda-right {
-        padding-left: 0;
-        margin-top: 20px;
-    }
-}
-   .agenda-accordion {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+   
+.titulo-agenda {
+    text-align: center;
+    margin-bottom: 25px;
 }
 
+.agenda-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 18px;
+    align-items: start;
+}
+
+.mes {
+    position: relative;
+}
+
+.mes-btn {
+    width: 100%;
+    text-align: left;
+    padding: 14px 16px;
+    background: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.mes-btn:hover {
+    background: #e67e00;
+}
+
+.mes-content {
+    display: none;
+    background: #f9f9f9;
+    padding: 14px;
+    border-radius: 10px;
+    line-height: 1.6;
+    margin-top: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.06);
+}
+
+.mes.active .mes-content {
+    display: block;
+}
+    
+  
 .mes-btn {
     width: 100%;
     text-align: left;
@@ -495,80 +533,134 @@ Pr Amós Anger e Keila Anger.
     </div>
 
 <!-- LADO DIREITO -->
-<div class="agenda-accordion">
+<div class="agenda-right">
+  <h2 class="titulo-agenda">Agenda do Ano</h2>
 
-  <div class="mes">
-    <button class="mes-btn">Junho</button>
-    <div class="mes-content">
-      09/06 – AGO<br>
-      13/06 – Culto Geral Jovens<br>
-      19 e 20/06 – Seminário UDF<br>
-      25/06 – CIEPADERGS<br>
-      27/06 – Vigília da Integração<br>
-      28/06 – Dia da Comunhão
+  <div class="agenda-grid">
+
+    <div class="mes">
+      <button class="mes-btn">Janeiro</button>
+      <div class="mes-content">
+        23 - Seminário TC
+      </div>
     </div>
-  </div>
 
-  <div class="mes">
-    <button class="mes-btn">Julho</button>
-    <div class="mes-content">
-      18/07 – Culto Geral de Jovens
+    <div class="mes">
+      <button class="mes-btn">Fevereiro</button>
+      <div class="mes-content">
+      07 - Encontro Círculo de Oração São Martinho
+      10 - AGO
+      14 e 15 - Unit Day
+      28 - Culto Geral de Jovens
+      </div>
     </div>
-  </div>
 
-  <div class="mes">
-    <button class="mes-btn">Agosto</button>
-    <div class="mes-content">
-      01 e 02/08 – Encontro Círculo de Oração<br>
-      11/08 – AGO<br>
-      15/08 – Culto Geral de Jovens<br>
-      21 e 22/08 – Seminário UDF<br>
-      29/08 – Vigília da Integração
+    <div class="mes">
+      <button class="mes-btn">Março</button>
+      <div class="mes-content">
+      08 - Dia da Mulher - Café com Palestra
+      14 - Campanha Bairro Operário
+      20 e 21 - Seminário UDF
+      24,25 e 26 - Convenção
+      28 - Culto Geral de Jovens
+      </div>
     </div>
-  </div>
 
-  <div class="mes">
-    <button class="mes-btn">Setembro</button>
-    <div class="mes-content">
-      10 e 11/09 – AGO<br>
-      12/09 – Fórum Teológico<br>
-      19/09 – Culto Geral de Jovens
+    <div class="mes">
+      <button class="mes-btn">Abril</button>
+      <div class="mes-content">
+      04 e 05 - Campanha Evangelística Braga
+      11 - Culto Geral de Jovens
+      12 - Reinauguração Vila Turvo
+      14 - AGO
+      18 - Vígilia da Intergração
+      25 e 26 - Imersão
+         
+      </div>
     </div>
-  </div>
 
-  <div class="mes">
-    <button class="mes-btn">Outubro</button>
-    <div class="mes-content">
-      03/10 – Campanha Evangelística<br>
-      10 e 11/10 – Encontro UFADECAN<br>
-      12/10 – Festa Infantil<br>
-      13/10 – AGO<br>
-      17/10 – Culto Jovens<br>
-      23 e 24/10 – Seminário UDF<br>
-      31/10 – Vigília
+    <div class="mes">
+      <button class="mes-btn">Maio</button>
+      <div class="mes-content">
+      16 e 17 - Encontro Joven Unit
+      23 e 24 - Festa Congregação Braga
+      30 - Fórum de Missões Urbanas
+      </div>
     </div>
-  </div>
 
-  <div class="mes">
-    <button class="mes-btn">Novembro</button>
-    <div class="mes-content">
-      08/11 – Encontro Círculo de Oração<br>
-      14 e 15/11 – Encontro Braga<br>
-      28/11 – Culto Jovens
+    <div class="mes">
+      <button class="mes-btn">Junho</button>
+      <div class="mes-content">
+        09 – AGO<br>
+        13 – Culto Geral Jovens<br>
+        19 e 20 – Seminário UDF<br>
+        25 – CIEPADERGS<br>
+        27 – Vigília da Integração<br>
+        28 – Dia da Comunhão
+      </div>
     </div>
-  </div>
 
-  <div class="mes">
-    <button class="mes-btn">Dezembro</button>
-    <div class="mes-content">
-      08/12 – AGE<br>
-      09/12 – Encerramento Círculo de Oração<br>
-      12/12 – Confraternização<br>
-      13/12 – Dia da Bíblia<br>
-      19/12 – Mini Fórum Jovens<br>
-      23/12 – Cantata de Natal<br>
-      31/12 – Culto da Virada
-    
+    <div class="mes">
+      <button class="mes-btn">Julho</button>
+      <div class="mes-content">
+        18 – Culto Geral de Jovens
+      </div>
+    </div>
+
+    <div class="mes">
+      <button class="mes-btn">Agosto</button>
+      <div class="mes-content">
+        01 e 02 – Encontro Círculo de Oração<br>
+        11 – AGO<br>
+        15 – Culto Geral de Jovens<br>
+        21 e 22 – Seminário UDF<br>
+        29 – Vigília da Integração
+      </div>
+    </div>
+
+    <div class="mes">
+      <button class="mes-btn">Setembro</button>
+      <div class="mes-content">
+        10 e 11 – AGO<br>
+        12 – Fórum Teológico<br>
+        19 – Culto Geral de Jovens
+      </div>
+    </div>
+
+    <div class="mes">
+      <button class="mes-btn">Outubro</button>
+      <div class="mes-content">
+        03 – Campanha Evangelística<br>
+        10 e 11 – Encontro UFADECAN<br>
+        12 – Festa Infantil<br>
+        13 – AGO<br>
+        17 – Culto Jovens<br>
+        23 e 24 – Seminário UDF<br>
+        31 – Vigília
+      </div>
+    </div>
+
+    <div class="mes">
+      <button class="mes-btn">Novembro</button>
+      <div class="mes-content">
+        08 – Encontro Círculo de Oração<br>
+        14 e 15 – Encontro Braga<br>
+        28 – Culto Jovens
+      </div>
+    </div>
+
+    <div class="mes">
+      <button class="mes-btn">Dezembro</button>
+      <div class="mes-content">
+        08 – AGE<br>
+        09 – Encerramento Círculo de Oração<br>
+        12 – Confraternização<br>
+        13 – Dia da Bíblia<br>
+        19 – Mini Fórum Jovens<br>
+        23 – Cantata de Natal<br>
+        31 – Culto da Virada
+      
+  </div>
 </div>
 
 </section>
