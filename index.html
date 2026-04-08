@@ -346,19 +346,20 @@ footer {
     max-height: 3000px;
 }
 
-/* CELULAR */
-@media (max-width: 768px) {
-    .texto-pastor {
-        max-height: 250px;
-    }
+.texto-pastor {
+    max-height: 180px;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
 
-    .texto-pastor.expandido {
-        max-height: 4000px;
-    }
+.texto-pastor.expandido {
+    max-height: 3000px;
+}
 
 .btn-toggle {
-    display: inline-block;
-    margin-top: 14px;
+    display: block;
+    width: fit-content;
+    margin: 14px auto 0;
     background: #fff;
     border: 2px solid #ff8c00;
     color: #ff8c00;
@@ -375,6 +376,15 @@ footer {
     color: #fff;
 }
 
+/* CELULAR */
+@media (max-width: 768px) {
+    .texto-pastor {
+        max-height: 250px;
+    }
+
+    .texto-pastor.expandido {
+        max-height: 4000px;
+    }
 
 </style>
 </head>
