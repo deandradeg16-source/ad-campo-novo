@@ -280,16 +280,6 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px 18px;
-    margin-bottom: 20px;
-}
-
-.agenda-display {
-    background: #f9f9f9;
-    padding: 18px;
-    border-radius: 10px;
-    line-height: 1.7;
-    min-height: 120px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.06);
 }
 
 .mes-btn {
@@ -306,9 +296,32 @@ h2 {
     transition: background 0.3s ease;
 }
 
-.mes-btn:hover,
-.mes-btn.ativo {
+.mes-btn:hover {
     background: #e67e00;
+}
+
+.mes.active .mes-btn {
+    background: #e67e00;
+}
+
+.mes-content {
+    display: none;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.6;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.06);
+}
+
+.mes.active .mes-content {
+    display: block;
+}
+
+.mes-content div {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 3px solid #ff8c00;
 }
 
 /* =====================
@@ -427,11 +440,6 @@ footer {
         margin: 16px auto 0;
         text-align: center;
     }
-}
-   .mes-content div {
-    margin-bottom: 10px;
-    padding-left: 10px;
-    border-left: 3px solid #ff8c00;
 }
 </style>
 </head>
@@ -641,7 +649,7 @@ Pr Amós Anger e Keila Anger.
         <div>13 – AGO</div>
         <div>17 – Culto Jovens</div>
         <div>23 e 24 – Seminário UDF</div>
-        <div>31 – Vigília</div>
+        <div>31 – Vigília da Integração</div>
       </div>
     </div>
 
