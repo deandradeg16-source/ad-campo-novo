@@ -908,21 +908,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // AGENDA ACCORDION
-    const meses = document.querySelectorAll(".mes-btn");
+const meses = document.querySelectorAll(".mes-btn");
 
-    meses.forEach(botao => {
-        botao.addEventListener("click", () => {
-            const mesAtual = botao.parentElement;
+meses.forEach(botao => {
+    botao.addEventListener("click", () => {
+        const mes = botao.parentElement;
 
-            document.querySelectorAll(".mes").forEach(m => {
-                if (m !== mesAtual) {
-                    m.classList.remove("active");
-                }
-            });
-
-            mesAtual.classList.toggle("active");
+        // fecha os outros
+        document.querySelectorAll(".mes").forEach(m => {
+            if (m !== mes) {
+                m.classList.remove("active");
+            }
         });
+
+        // abre/fecha o clicado
+        mes.classList.toggle("active");
     });
+});
 
     // TEXTO DO PASTOR
     const btnToggle = document.querySelector(".btn-toggle");
