@@ -443,99 +443,47 @@ footer {
 
    
 /* =====================
-   MISSÃO, VISÃO E VALORES
+   MISSÃO VISÃO VALORES - ESTILO BANNER
 ===================== */
 
-#missao-visao-valores {
-    text-align: center;
-}
-
-.mvv-intro {
-    max-width: 700px;
-    margin: 0 auto 40px;
-    line-height: 1.6;
-}
-
-.mvv-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.mvv-card {
+.mvv-banner {
     position: relative;
-    height: 420px;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,.15);
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.mvv-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.mvv-card::after {
+.mvv-banner::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.18));
-    z-index: 1;
+    background: rgba(0,0,0,0.6);
 }
 
-.mvv-overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.mvv-content {
+    position: relative;
     z-index: 2;
-    padding: 24px;
-    text-align: left;
+    text-align: center;
     color: #fff;
+    max-width: 900px;
+    padding: 20px;
 }
 
-.mvv-overlay h3 {
-    margin: 0 0 10px;
-    font-size: 26px;
-    color: #fff;
+.mvv-content h3 {
+    color: #ff8c00;
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-.mvv-overlay p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.6;
-    color: #fff;
+.mvv-content p {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
 }
-
-.mvv-card:hover .mvv-img {
-    transform: scale(1.03);
-    transition: transform 0.4s ease;
-}
-
-@media (max-width: 768px) {
-    .mvv-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .mvv-card {
-        height: 320px;
-    }
-
-    .mvv-overlay {
-        padding: 18px;
-    }
-
-    .mvv-overlay h3 {
-        font-size: 22px;
-    }
-
-    .mvv-overlay p {
-        font-size: 14px;
-    }
-
-
 </style>
 </head>
 
@@ -772,40 +720,42 @@ Pr. Amós Anger e Keila Anger.
 </section>
 
 <section id="missao-visao-valores">
-  <h2>Missão, Visão e Valores</h2>
-  <p class="mvv-intro">
-    Conheça os pilares que direcionam a AD Campo Novo em sua caminhada de fé, serviço e discipulado.
-  </p>
 
-  <div class="mvv-grid">
-    <div class="mvv-card">
-      <img src="missao.png" alt="Missão" class="mvv-img">
-      <div class="mvv-overlay">
-        <h3>Missão</h3>
-        <p>Fazer discípulos eficazes e zelar pela saúde física, espiritual e emocional dos membros.</p>
-      </div>
-    </div>
-
-    <div class="mvv-card">
-      <img src="visao.png" alt="Visão" class="mvv-img">
-      <div class="mvv-overlay">
-        <h3>Visão</h3>
-        <p>
-          Gerar discípulos empoderados pelo Espírito Santo, que serão líderes transformados tanto na sua família como na sociedade onde vive, impactando positivamente na fibra moral da cidade.
-        </p>
-      </div>
-    </div>
-
-    <div class="mvv-card">
-      <img src="valores.png" alt="Valores" class="mvv-img">
-      <div class="mvv-overlay">
-        <h3>Valores</h3>
-        <p>
-          Homens curados e sacerdotes; Mulheres únicas e cheias de sabedoria; Jovens íntegros e disponíveis ao serviço cristão; Adolescentes adoradores e inconformados com o mundo; Crianças resistentes às ideologias antibíblicas.
-        </p>
-      </div>
+  <div class="mvv-banner" style="background-image: url('missao.png');">
+    <div class="mvv-content">
+      <h3>NOSSA MISSÃO:</h3>
+      <p>
+        FAZER DISCÍPULOS EFICAZES E ZELAR PELA SAÚDE FÍSICA,
+        ESPIRITUAL E EMOCIONAL DOS MEMBROS.
+      </p>
     </div>
   </div>
+
+  <div class="mvv-banner" style="background-image: url('visao.png');">
+    <div class="mvv-content">
+      <h3>NOSSA VISÃO:</h3>
+      <p>
+        GERAR DISCÍPULOS EMPODERADOS PELO ESPÍRITO SANTO,
+        QUE SERÃO LÍDERES TRANSFORMADOS TANTO NA SUA FAMÍLIA
+        COMO NA SOCIEDADE ONDE VIVE, IMPACTANDO POSITIVAMENTE
+        NA FIBRA MORAL DA CIDADE.
+      </p>
+    </div>
+  </div>
+
+  <div class="mvv-banner" style="background-image: url('valores.png');">
+    <div class="mvv-content">
+      <h3>NOSSOS VALORES:</h3>
+      <p>
+        • HOMENS CURADOS E SACERDOTES;<br>
+        • MULHERES ÚNICAS E CHEIAS DE SABEDORIA;<br>
+        • JOVENS ÍNTEGROS E DISPONÍVEIS AO SERVIÇO CRISTÃO;<br>
+        • ADOLESCENTES ADORADORES E INCONFORMADOS COM O MUNDO;<br>
+        • CRIANÇAS RESISTENTES ÀS IDEOLOGIAS ANTIBÍBLICAS.
+      </p>
+    </div>
+  </div>
+
 </section>
    
 <section id="quem-somos">
