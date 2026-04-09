@@ -442,47 +442,60 @@ footer {
     }
 
    
-/* =====================
-   MISSÃO VISÃO VALORES - ESTILO BANNER
-===================== */
-
-.mvv-banner {
-    position: relative;
-    height: 320px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#missao-visao-valores {
+    text-align: center;
 }
 
-.mvv-banner::before {
+.mvv-desc {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* cada bloco */
+.mvv-item {
+    position: relative;
+    margin-bottom: 20px;
+    height: 260px; /* controla o tamanho */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* imagem */
+.mvv-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* escurecimento */
+.mvv-item::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.55);
 }
 
-.mvv-content {
-    position: relative;
+/* texto */
+.mvv-texto {
+    position: absolute;
+    inset: 0;
     z-index: 2;
-    text-align: center;
-    color: #fff;
-    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
+    color: #fff;
 }
 
-.mvv-content h3 {
+.mvv-texto h3 {
     color: #ff8c00;
-    font-size: 22px;
     margin-bottom: 10px;
-    font-weight: bold;
 }
 
-.mvv-content p {
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.5;
+.mvv-texto p {
+    max-width: 700px;
+    font-weight: 500;
 }
 </style>
 </head>
@@ -721,37 +734,43 @@ Pr. Amós Anger e Keila Anger.
 
 <section id="missao-visao-valores">
 
-  <div class="mvv-banner" style="background-image: url('missao.png');">
-    <div class="mvv-content">
-      <h3>NOSSA MISSÃO:</h3>
+  <h2>Missão, Visão e Valores</h2>
+
+  <p class="mvv-desc">
+    Conheça os pilares que norteiam a AD Campo Novo.
+  </p>
+
+  <!-- MISSÃO -->
+  <div class="mvv-item">
+    <img src="missao.png" alt="Missão">
+    <div class="mvv-texto">
+      <h3>Missão</h3>
       <p>
-        FAZER DISCÍPULOS EFICAZES E ZELAR PELA SAÚDE FÍSICA,
-        ESPIRITUAL E EMOCIONAL DOS MEMBROS.
+        Fazer discípulos eficazes e zelar pela saúde física, espiritual e emocional dos membros.
       </p>
     </div>
   </div>
 
-  <div class="mvv-banner" style="background-image: url('visao.png');">
-    <div class="mvv-content">
-      <h3>NOSSA VISÃO:</h3>
+  <!-- VISÃO -->
+  <div class="mvv-item">
+    <img src="visao.png" alt="Visão">
+    <div class="mvv-texto">
+      <h3>Visão</h3>
       <p>
-        GERAR DISCÍPULOS EMPODERADOS PELO ESPÍRITO SANTO,
-        QUE SERÃO LÍDERES TRANSFORMADOS TANTO NA SUA FAMÍLIA
-        COMO NA SOCIEDADE ONDE VIVE, IMPACTANDO POSITIVAMENTE
-        NA FIBRA MORAL DA CIDADE.
+        Gerar discípulos empoderados pelo Espírito Santo, que serão líderes transformados tanto na sua família como na sociedade onde vive, impactando
+           positivamente na fibra moral da cidade.
       </p>
     </div>
   </div>
 
-  <div class="mvv-banner" style="background-image: url('valores.png');">
-    <div class="mvv-content">
-      <h3>NOSSOS VALORES:</h3>
+  <!-- VALORES -->
+  <div class="mvv-item">
+    <img src="valores.png" alt="Valores">
+    <div class="mvv-texto">
+      <h3>Valores</h3>
       <p>
-        • HOMENS CURADOS E SACERDOTES;<br>
-        • MULHERES ÚNICAS E CHEIAS DE SABEDORIA;<br>
-        • JOVENS ÍNTEGROS E DISPONÍVEIS AO SERVIÇO CRISTÃO;<br>
-        • ADOLESCENTES ADORADORES E INCONFORMADOS COM O MUNDO;<br>
-        • CRIANÇAS RESISTENTES ÀS IDEOLOGIAS ANTIBÍBLICAS.
+        Homens curados e sacerdotes; Mulheres únicas e cheias de sabedoria; Jovens íntegros e disponíveis ao serviço cristão;
+           Adolescentes adoradores e inconformados com o mundo; Crianças resistentes às ideologias antibíblicas.
       </p>
     </div>
   </div>
